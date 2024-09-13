@@ -1,0 +1,37 @@
+# Use a specific Node.js version for better reproducibility
+FROM node:18-alpine
+
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and yarn.lock (if exists) for better caching
+COPY package.json yarn.lock* ./
+
+# Install dependencies
+RUN yarn install --frozen-lockfile
+
+# Copy the rest of the application code
+COPY . .
+
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Environment variables
+# Note: For production, use a .env file or environment-specific deployment configs
+# To hide sensitive information when pushing to GitHub:
+# 1. Create a .env file locally with your actual values
+# 2. Add .env to your .gitignore file
+# 3. Use a .env.example file in your repo with placeholder values
+ENV PORT=${PORT}
+ENV DATABASE_URL=${DATABASE_URL}
+ENV API_KEY=${API_KEY}
+ENV ENCRYPTION_HASH=${ENCRYPTION_HASH}
+
+# Build the backend
+RUN yarn build
+
+# Generate Prisma client
+RUN npx prisma generate
+
+# Start the application
+CMD ["yarn", "start"]
