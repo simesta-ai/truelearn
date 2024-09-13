@@ -1,3 +1,9 @@
+/**
+ * file: chat/routes.ts
+ * author: Samuel Emeka<@samthemogul>
+ * Date: 06/09/24
+ */
+
 import express from 'express'
 import ChatController from './controllers'
 import { uploadAudio } from '../../../../libs/utils/services/multer'
