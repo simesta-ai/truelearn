@@ -1,3 +1,10 @@
+/**
+ * file: src/index.ts
+ * author: Samuel Emeka<@samthemogul>
+ * First Modified: 02/09/24
+ * Last Modified: 12/09/24
+ */
+
 import express from 'express'
 import dotenv from 'dotenv'
 import AppController from './app'
