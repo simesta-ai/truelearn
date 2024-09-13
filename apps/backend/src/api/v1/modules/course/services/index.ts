@@ -1,3 +1,10 @@
+/**
+ * @file: course/index.ts
+ * @author: Taiwo Joseph<emperortj128@gmail.com>
+ * @date: 07/09/24
+ * @purpose: Manages the functions for generating and retrieving courses
+ */
+
 import { CustomError } from '../../../../../libs/utils/handlers/error'
 import { ICreateCourse } from '../../../../../types'
 import createCourse from './createCourse'
