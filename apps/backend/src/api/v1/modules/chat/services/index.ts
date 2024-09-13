@@ -1,3 +1,9 @@
+/**
+ * file: chat/services/index.ts
+ * author: Samuel Emeka<@samthemogul>
+ * Date: 06/09/24
+ */
+
 import fs from 'fs'
 const sdk = require('microsoft-cognitiveservices-speech-sdk')
 import convertFileFormat from '../../../../../libs/utils/services/audioconverter'
