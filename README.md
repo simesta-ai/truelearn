@@ -29,14 +29,33 @@ This backend serves as the foundation for the TrueLearn ecosystem, providing rob
 
 ### Samuel Emeka
 
-- role: 
-- actions:
+- Role: Software Engineer (Mobile and Backend)
+- Actions:
+  1. Built the chat system ontop of  gemini ai to determine users most appropriate learning method.
+  2. Build socket server to power chat messaging
+  3. Implemented speech to text logic using Azure Speech service to enable voice commands from the frontend.
+
+### Sakibu Abdulmujeeb 
+- Role: Machine Learning engineer 
+- Actions:
+  1. Prompt engineering to determine user's learning methods. To work on: LLM to provide course content.
+
+### Daniel
+
+- Role: Software Engineer (Backend)
+
+- Actions:
+  1. Implemented the creation of Topic Lectures which involves the use of a generative ai model to generate an array of lectures associated with a Topic.
+  2. ⁠ Worked on populating each lectures with lecture contents sufficient to help a user understand a topic by creating a set of idea content, image description(to explain the ideas better) and Quizzes as well.
 
 ### Emmanuel 
 
-- role: Product Manager
-- actions:
-  - Oversaw the whole operation from creation to
+- Role: Program Manager 
+- Actions:
+  1. Oversaw team activities.
+  2. Scheduled team meetings and monitored the progress of each member.
+  3. Ensured team is up to date with all necessary information regarding the buildathon.
+  4. Assisted in research and data gathering for the development of the team's project.
 
 ### Kingsley Ihemelandu
 
@@ -44,6 +63,12 @@ This backend serves as the foundation for the TrueLearn ecosystem, providing rob
 - actions:
   - Did the authentication of users
   - Worked on the user model and
+ 
+### Joseph Taiwo
+- Role: Backend Engineer
+  1. Implemented functions for creating courses based on input (titles, topics, and files) from users.
+  2. Worked on the functions for retrieving courses from the database.
+  3. Transferred and improved code from controllers to services during structural code changes.
  
 ### Mobile Frontend to be developed subsequently with following features:
 - Interface from user signin and register
