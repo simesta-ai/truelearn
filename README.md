@@ -45,4 +45,9 @@ This backend serves as the foundation for the TrueLearn ecosystem, providing rob
   - Did the authentication of users
   - Worked on the user model and
  
-### Mobile Frontend to be developed subsequently
+### Mobile Frontend to be developed subsequently with following features:
+- Interface from user signin and register
+- Chat Interface to display communication with socket server to determine learning method 
+- Interface to create course(add subtopics and files)
+- Interface to view created course content and learn
+- Technologies: React Native Expo, Redux Toolkit, Socket client
