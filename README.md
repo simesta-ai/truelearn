@@ -1,14 +1,14 @@
 # TrueLearn - AI-powered Learning Assistant
 
-TrueLearn is an innovative learning application that harnesses the power of AI to create personalized learning experiences for users.
+TrueLearn is an innovative learning application that harnesses the power of AI to create personalized learning experiences for users. It interacts with the user and determines the way they learn best and teaches them "ANY" course based on that learning method.
 
-## Project Overview
+## Project Overview(API)
 
 This repository contains the backend code for the TrueLearn application, built with Express and TypeScript. It serves as the core engine for the entire TrueLearn platform.
 
 ### Key Features:
 
-- **Personalized Learning Paths**: Users can input a course title (and optionally specific topics) and TrueLearn generates a tailored learning journey with both textual and video content.
+- **Personalized Learning Paths**: Users can input a course title (and optionally specify topics, and any relevant file ) and TrueLearn generates a tailored learning journey with both textual and video content.
 - **Text Generation**: The application leverages the Gemini Pro model to create comprehensive textual learning materials.
 - **Image Generation**: Using the Imagen model, TrueLearn provides visual aids in the form of images based on the learning content.
 - **Video Integration**: By utilizing the YouTube API, TrueLearn incorporates relevant videos into the learning path.
@@ -36,7 +36,7 @@ This backend serves as the foundation for the TrueLearn ecosystem, providing rob
 
 - role: Product Manager
 - actions:
-  - Overlooked the whole operation from creation to
+  - Oversaw the whole operation from creation to
 
 ### Kingsley Ihemelandu
 
@@ -45,4 +45,4 @@ This backend serves as the foundation for the TrueLearn ecosystem, providing rob
   - Did the authentication of users
   - Worked on the user model and
  
-
+### Mobile Frontend to be developed subsequently
