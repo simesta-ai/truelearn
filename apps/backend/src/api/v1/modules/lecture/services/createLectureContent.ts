@@ -31,7 +31,7 @@ const createLectureContent = async ({
     ideaContent: [],
     videos: [''],
   }
-  let courseFileContent: string[] = []
+  let courseFileContent: (string | undefined)[] = []
   try {
     const lecture = await lectureRepository.findById(lectureId)
     const course = await courseRepository.findWithFiles(courseId)
@@ -70,14 +70,14 @@ const createLectureContent = async ({
       // Generate lecture Idea content
       const generatedIdeaContent = await aiGenerator.generateIdeaContent(
         lecture.title,
-        courseFileContent
+        courseFileContent.filter((content) => content !== undefined)
       )
 
-      if(!generatedIdeaContent || generatedIdeaContent.length === 0){
+      if (!generatedIdeaContent || generatedIdeaContent.length === 0) {
         error = new ServerError('Error generating lecture content')
         throw error
       }
-      
+
       lectureContent.ideaContent = generatedIdeaContent
 
       // Generate video content
