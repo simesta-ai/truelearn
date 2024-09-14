@@ -1,4 +1,12 @@
-import { PrismaClient } from '@prisma/client'
+/**
+ * @file user/repository/index.ts
+ * @author [Kingsley Ihemelandu]
+ * @github [https://github.com/kijuchihe]
+ * @description Defines the user repository for the application.
+ * @created [2024-07-20]
+ * @lastModified [2024-07-20]
+ * @module api/v1/modules/user
+ */
 
 import prisma from '../../../../../config/db/prisma'
 import RoleRepository from '../../role/repository'
