@@ -24,3 +24,25 @@ This repository contains the backend code for the TrueLearn application, built w
 - **Authentication**: Google OAuth2, JWT
 
 This backend serves as the foundation for the TrueLearn ecosystem, providing robust API endpoints and AI-driven functionalities to power the learning experience across all TrueLearn platforms.
+
+## Roles
+
+### Samuel Emeka
+
+- role: 
+- actions:
+
+### Emmanuel 
+
+- role: Product Manager
+- actions:
+  - Overlooked the whole operation from creation to
+
+### Kingsley Ihemelandu
+
+- role: Lead Engineer
+- actions:
+  - Did the authentication of users
+  - Worked on the user model and
+ 
+
