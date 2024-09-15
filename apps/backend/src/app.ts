@@ -75,6 +75,7 @@ class AppController {
 
   private configureRouting() {
     const appRouter = new ApiRouter(this.app)
+    appRouter.configRootRoutes()
     appRouter.configAuthRoutes()
     appRouter.configUserRoutes()
     appRouter.configureCourseRoutes()

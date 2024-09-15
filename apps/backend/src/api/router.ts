@@ -15,6 +15,12 @@ class Router {
     this.jwtService = new JwtService()
   }
 
+  public configRootRoutes() {
+    this.app.get('/', (req: express.Request, res: express.Response) => {
+      res.send('TrueLearn API - Visit https://github.com/simesta-ai/truelearn for usage.')
+    })
+  }
+
   public configAuthRoutes() {
     this.app.use('/auth', authRoutes)
   }
