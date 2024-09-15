@@ -50,7 +50,7 @@ This backend serves as the foundation for the TrueLearn ecosystem, providing rob
   1. Implemented the creation of Topic Lectures which involves the use of a generative ai model to generate an array of lectures associated with a Topic.
   2. ⁠ Worked on populating each lectures with lecture contents sufficient to help a user understand a topic by creating a set of idea content, image description(to explain the ideas better) and Quizzes as well.
 
-### Emmanuel 
+### Emmanuel Awolowo
 
 - Role: Program Manager 
 - Actions:
