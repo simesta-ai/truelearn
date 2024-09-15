@@ -1,3 +1,13 @@
+/*
+ * @file controllers/index.ts
+ * @author [Emeka Samuel]
+ * @github [https://github.com/samthemogul]
+ * @description Defines controller to handle speech-to-text requests.
+ * @created [2024-09-09]
+ * @lastModified [2024-09-15]
+ * @module api/v1/modules/chat
+ */
+
 import { NextFunction, Request, Response } from 'express'
 import ChatService from '../services'
 

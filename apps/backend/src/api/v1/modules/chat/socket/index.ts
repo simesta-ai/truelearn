@@ -1,3 +1,13 @@
+/*
+ * @file socket/index.ts
+ * @author [Emeka Samuel]
+ * @github [https://github.com/samthemogul]
+ * @description Implementation for user-ai chat to determine learning method.
+ * @created [2024-09-09]
+ * @lastModified [2024-09-15]
+ * @module api/v1/modules/chat
+ */
+
 import { io } from '../../../../..'
 import AIMessenger from './aimessaging';
 
