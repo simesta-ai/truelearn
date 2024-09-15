@@ -29,10 +29,10 @@ interface IcorsOptions {
 
 class AppController {
   private app: express.Application
-  private port: string
+  private port: string|number
   private readonly corsOptions: IcorsOptions
 
-  constructor(app: express.Application, port: string) {
+  constructor(app: express.Application, port: string|number) {
     this.app = app
     this.port = port
     this.corsOptions = {
