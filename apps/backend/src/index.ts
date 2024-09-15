@@ -22,7 +22,7 @@ dotenv.config()
 export const app = express()
 
 
-const PORT = process.env.PORT as string
+const PORT = process.env.PORT || 4000
 const appController = new AppController(app, PORT)
 const httpServer = appController.startApp()
 export const io = new Server(httpServer)
