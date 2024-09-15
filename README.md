@@ -40,7 +40,7 @@ This backend serves as the foundation for the TrueLearn ecosystem, providing rob
 - Actions:
   1. Prompt engineering to determine user's learning methods. To work on: LLM to provide course content.
 
-### Daniel
+### Daniel Fadehan
 
 - Role: Software Engineer (Backend)
 
@@ -86,7 +86,9 @@ This backend serves as the foundation for the TrueLearn ecosystem, providing rob
 ### Clone the repo
 
 ```sh
-git clone https://github.com/simesta-ai/truelearn
+git clone https://github.com/simesta-ai/truelearn.git
+
+cd truelearn
 ```
 
 ### Install the backend dependencies
