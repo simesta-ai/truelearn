@@ -2,6 +2,8 @@
 
 TrueLearn is an innovative learning application that harnesses the power of AI to create personalized learning experiences for users. It interacts with the user and determines the way they learn best and teaches them "ANY" course based on that learning method.
 
+The backend server is like at [https://truelearn-production.up.railway.app](https://truelearn-production.up.railway.app)
+
 ## Project Overview(API)
 
 This repository contains the backend code for the TrueLearn application, built with Express and TypeScript. It serves as the core engine for the entire TrueLearn platform.
