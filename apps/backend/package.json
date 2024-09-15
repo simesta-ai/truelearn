@@ -4,7 +4,7 @@
   "description": "",
   "main": "./src/index.ts",
   "scripts": {
-    "start": "npx prisma generate && node dist/app.js",
+    "start": "npx prisma generate && node dist/index.js",
     "test": "mocha --exit",
     "build": "tsc",
     "start:dev": "npx prisma generate && nodemon ",
