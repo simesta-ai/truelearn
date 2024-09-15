@@ -61,18 +61,42 @@ This backend serves as the foundation for the TrueLearn ecosystem, providing rob
 
 - role: Lead Engineer
 - actions:
-  - Did the authentication of users
-  - Worked on the user model and
+  1. Did the authentication of users
+  2. Worked on the user module and its services
+  3. Implemented the database setup with Prisma
+  4. Had an oversight of the operation of the backend
  
 ### Joseph Taiwo
 - Role: Backend Engineer
   1. Implemented functions for creating courses based on input (titles, topics, and files) from users.
   2. Worked on the functions for retrieving courses from the database.
   3. Transferred and improved code from controllers to services during structural code changes.
- 
+
+## Further Development
+
 ### Mobile Frontend to be developed subsequently with following features:
 - Interface from user signin and register
 - Chat Interface to display communication with socket server to determine learning method 
 - Interface to create course(add subtopics and files)
 - Interface to view created course content and learn
 - Technologies: React Native Expo, Redux Toolkit, Socket client
+
+## Setup in development
+
+### Clone the repo
+
+```sh
+git clone https://github.com/simesta-ai/truelearn
+```
+
+### Install the backend dependencies
+
+```sh
+yarn install:backend
+```
+
+### Start the development server
+
+```sh
+yarn dev:backend
+```
