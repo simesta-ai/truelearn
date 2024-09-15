@@ -1,8 +1,8 @@
 # TrueLearn - AI-powered Learning Assistant
 
-TrueLearn is an innovative learning application that harnesses the power of AI to create personalized learning experiences for users. It interacts with the user and determines the way they learn best and teaches them "ANY" course based on that learning method.
+TrueLearn is an innovative learning application that harnesses the power of AI to create personalized learning experiences for users. It interacts with the user and determines the way they learn best and teaches them "ANY" course of their choice based on that learning method.
 
-The backend server is like at [https://truelearn-production.up.railway.app](https://truelearn-production.up.railway.app)
+The backend server is live at [https://truelearn-production.up.railway.app](https://truelearn-production.up.railway.app)
 
 ## Project Overview(API)
 
