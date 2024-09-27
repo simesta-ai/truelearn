@@ -35,7 +35,8 @@ const getUserCourses = async (
   try {
     const user = await userRepository.findById(userId)
     if (user) {
-      const courses = await courseRepository.find({ user: userId })
+      const courses = await courseRepository.find({ userId: userId })
+      console.log('courses', courses)
       if (courses.length < 1)
         return {
           coursesList,

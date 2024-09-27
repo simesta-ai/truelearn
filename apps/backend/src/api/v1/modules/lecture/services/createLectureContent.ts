@@ -34,11 +34,14 @@ const createLectureContent = async ({
   let courseFileContent: (string | undefined)[] = []
   try {
     const lecture = await lectureRepository.findById(lectureId)
-    const course = await courseRepository.findWithFiles(courseId)
+    const course = await courseRepository.findWithFilesAndLearningMethod(
+      courseId
+    )
 
     if (lecture && course) {
       //Handle course files
       const fileUrls = course.courseFiles.map((file: any) => file.url)
+      const learningMethod = course.user.primaryLearningMethod?.name
 
       if (fileUrls.length > 0) {
         courseFileContent = await Promise.all(
@@ -70,7 +73,8 @@ const createLectureContent = async ({
       // Generate lecture Idea content
       const generatedIdeaContent = await aiGenerator.generateIdeaContent(
         lecture.title,
-        courseFileContent.filter((content) => content !== undefined)
+        courseFileContent.filter((content) => content !== undefined),
+        learningMethod || undefined
       )
 
       if (!generatedIdeaContent || generatedIdeaContent.length === 0) {
