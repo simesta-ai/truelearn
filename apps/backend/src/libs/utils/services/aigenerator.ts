@@ -159,9 +159,7 @@ class AIGenerator {
     #Options : The options for the question separated by a semicolon(;) minimum of 4 options
     #Explanation : The explanation for the question
     #Correct Answer : The correct answer for the question
-    ) but ensure the section is present
-
-    ) must be present whether they have content or not that is the sections separated by the '##' .
+    ) but ensure the section is present) 
      Also note that a question can have a single answer, on an occasion where a question is an open ended question without options, in this scenario the option should represent a blank string like so - "". and the correct answer should be the answer to the question.
 
      You are generating ideas to be consumed by a user, but then different users learn in various different ways, they are accustomed to. based on this learning method: ${learningMethod}, generate content to effectively explain each concept to the user. There are 4 main learning methods, Visual, Auditory, Reading/Writing, and Kinesthetic. Based on the specified method, let the text, image description and quiz and all suit the user. For example a visual learner would prefer more images and diagrams, an auditory learner would prefer more audio and text(however, you could just generate normal content for an auditory learner, we intend to transcribe the text to audio for people like this), a reading/writing learner would prefer more text and quizzes, and a kinesthetic learner would prefer more interactive content and quizzes. Ensure that the content generated is in line with the learning method specified.

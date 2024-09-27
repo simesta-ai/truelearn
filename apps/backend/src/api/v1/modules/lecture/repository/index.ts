@@ -38,62 +38,6 @@ class LectureRepository {
     return lectures
   }
 
-  // updateVideoAndContent = async (
-  //   id: string,
-  //   videos: { id: string }[],
-  //   ideaContents: IIdeaContent[]
-  // ): Promise<any> => {
-  //   // Step 1: Update the main entity with basic fields
-  //   const update = await this.model.update({
-  //     where: { id },
-  //     data: {
-  //       videos: {
-  //         set: videos.map((video) => ({ id: video.id })),
-  //       },
-  //     },
-  //   });
-
-  //   // Step 2: Use createMany for videos
-  //   await prisma.video.createMany({
-  //     data: videos.map((video) => ({
-  //       id: video.id,
-  //       lectureId: id, // Assuming lectureId is the foreign key
-  //     })),
-  //   });
-
-  //   // Step 3: Use individual create operations for ideaContents and their nested quizzes
-  //   await Promise.all(
-  //     ideaContents.map(async (content) => {
-  //       const createdContent = await prisma.ideaContent.create({
-  //         data: {
-  //           text: content.text,
-  //           image: content.imageDescription,
-  //           lectureId: id, // Assuming lectureId is the foreign key
-  //         },
-  //       });
-
-  //       if (content.quiz) {
-  //         await prisma.quiz.create({
-  //           data: {
-  //             question: content.quiz.question,
-  //             explanation: content.quiz.explanation,
-  //             ideaContentId: createdContent.id, // Assuming ideaContentId is the foreign key
-  //             options: {
-  //               create: (content.quiz.options ?? []).map((option) => ({
-  //                 text: option,
-  //               })),
-  //             },
-  //             answers: {
-  //               create: [{ text: content.quiz.correct_answer }],
-  //             },
-  //           },
-  //         });
-  //       }
-  //     })
-  //   );
-
-  //   return update;
-  // };
 
   updateVideoAndContent = async (
     id: string,
@@ -129,7 +73,7 @@ class LectureRepository {
           data: {
             text: content.text,
             image: content.imageDescription,
-            lectureId: id, // Assuming lectureId is the foreign key
+            lectureId: id, 
           },
         });
 
@@ -138,7 +82,7 @@ class LectureRepository {
             data: {
               question: content.quiz?.question ?? '',
               explanation: content.quiz.explanation,
-              ideaContentId: createdContent.id, // Assuming ideaContentId is the foreign key
+              ideaContentId: createdContent.id, 
               options: {
                 create: (content.quiz.options ?? []).map((option) => ({
                   text: option,
