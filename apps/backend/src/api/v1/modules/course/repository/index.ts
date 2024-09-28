@@ -56,7 +56,7 @@ class CourseRepository {
     if (!query) {
       courses = await this.model.findMany()
     }
-    courses = await this.model.findMany({ where: query })
+    courses = await this.model.findMany({ where: query, include: { topics: true } })
     return courses
   }
 
