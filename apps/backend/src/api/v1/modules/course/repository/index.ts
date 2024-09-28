@@ -56,8 +56,15 @@ class CourseRepository {
     if (!query) {
       courses = await this.model.findMany()
     }
-    courses = await this.model.findMany({ where: query })
+    courses = await this.model.findMany({ where: query, include: { topics: true } })
     return courses
+  }
+  findCourseWithTopics = async (id: string) => {
+    const course = await this.model.findUnique({
+      where: { id },
+      include: { topics: true },
+    })
+    return course
   }
 
   //   updateOne = async ({
