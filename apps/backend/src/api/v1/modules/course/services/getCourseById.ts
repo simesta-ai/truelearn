@@ -3,7 +3,7 @@ import CourseRepository from "../repository"
 const courseRepository = new CourseRepository()
 const getCourseById = async (id: string) => {
     try {
-      const course = await courseRepository.findById(id)
+      const course = await courseRepository.findCourseWithTopics(id)
     if (!course) {
       throw new Error('Course not found')
     }
