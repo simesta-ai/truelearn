@@ -10,8 +10,11 @@
 
 import { Request, Response, NextFunction } from 'express'
 import CourseController from '../../course/controllers'
+import UserService from '../services'
 
 const courseService = new CourseController()
+const user = new UserService()
+
 
 class UserController {
   async createCourse(req: Request, res: Response, next: NextFunction) {
@@ -19,6 +22,20 @@ class UserController {
   }
   async getAllCourses(req: Request, res: Response, next: NextFunction) {
     await courseService.getAllCourses(req, res, next)
+  }
+  async getUser(req: Request, res: Response, next: NextFunction) {
+    const { userId } = req.params
+    try {
+      const fetchedUser = await user.getUserById(userId)
+      res.status(200).json({
+        message: 'User fetched successfully',
+        success: true,
+        data: fetchedUser,
+      })
+    } catch (error) {
+      next(error)
+    }
+
   }
 }
 

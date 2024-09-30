@@ -35,7 +35,7 @@ const getLecture = async (lectureId: string) => {
           updatedAt: Date;
         }) => video.id)
       } else {
-        error = new ServerError('Lecture videos do no exist')
+        error = new ServerError('Lecture videos do not exist')
       }
     } else {
       error = new ServerError('Lecture not found')
