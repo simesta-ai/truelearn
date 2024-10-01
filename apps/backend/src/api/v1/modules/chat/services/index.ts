@@ -29,7 +29,7 @@ async function fromFile(path: string) {
           speechConfig,
           audioConfig
         )
-  
+
         speechRecognizer.recognizeOnceAsync((result: any) => {
           switch (result.reason) {
             case sdk.ResultReason.RecognizedSpeech:
@@ -57,9 +57,29 @@ async function fromFile(path: string) {
     }, 3000)
   })
   return text
-  
-   
-  
+}
+
+async function handleTextToSpeech(message: string) {
+  const audioPath = `./public/uploads/${Date.now()}.mp3`
+  const audioConfig = sdk.AudioConfig.fromAudioFileOutput(audioPath)
+
+  speechConfig.speechSynthesisVoiceName = 'en-US-AvaMultilingualNeural'
+
+  // Create the speech synthesizer.
+  let synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig)
+
+  await new Promise((resolve, reject) => {
+    synthesizer.speakTextAsync(message, (result: any) => {
+      if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+        console.log(`Speech synthesized to [${audioPath}]`)
+        resolve(result)
+      } else {
+        reject(new Error(`Error in speech synthesis, ${result.errorDetails}`))
+      }
+    })
+  })
+  synthesizer.close()
+  return audioPath
 }
 
 class ChatService {
@@ -67,18 +87,28 @@ class ChatService {
     try {
       const filePath = file.path
       const response = await fromFile(filePath)
-      if(typeof response === "string"){
+      if (typeof response === 'string') {
         return response
       } else {
         return ''
       }
-
     } catch (error) {
       throw error
     }
   }
-  async sendMessage(message: string) {
-    
+  async sendMessage(message: string) {}
+
+  async textToSpeech(text: string) {
+    try {
+      const audioPath = await handleTextToSpeech(text)
+      if (typeof audioPath === 'string') {
+        return audioPath
+      } else {
+        return ''
+      }
+    } catch (error) {
+      throw error
+    }
   }
 }
 

@@ -21,5 +21,9 @@ router.post(
   uploadAudio.single('audio'),
   chatController.speechToText
 )
+router.get(
+  '/text-to-speech',
+  chatController.textToSpeech
+)
 
 export default router
