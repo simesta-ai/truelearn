@@ -21,7 +21,7 @@ class ChatController {
     try {
       if (req.file) {
         const file = req.file;
-        const response = await chatService.speechToText(file)
+        const response = await chatService.speechToText(file);
         if(response && response.length > 0){
              res.status(200).json({
               message: 'Speech to text conversion successful',
