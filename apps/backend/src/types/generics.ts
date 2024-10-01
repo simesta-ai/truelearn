@@ -1,7 +1,8 @@
 export interface Repository<Model> {
   model: Model
 
-  create: (ModelDetails: Partial<Model>) => Promise<Model>
+  createOne: (ModelDetails: Partial<Model>) => Promise<Model>
+  createMany: () => Promise<any>
   findAll: () => Promise<Model[]>
 
   findOne: (query: any) => Promise<Model | null>

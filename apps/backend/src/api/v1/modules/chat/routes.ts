@@ -6,14 +6,13 @@
  * @created [2024-09-09]
  * @lastModified [2024-09-15]
  * @module api/v1/modules/chat
- */
-
+ */
 
 import express from 'express'
 import ChatController from './controllers'
 import { uploadAudio } from '../../../../libs/utils/services/multer'
 
-const router = express.Router()
+const router: express.Router = express.Router()
 const chatController = new ChatController()
 
 router.post(
@@ -21,5 +20,7 @@ router.post(
   uploadAudio.single('audio'),
   chatController.speechToText
 )
+
+router.post('/text-to-img', chatController.textToImg)
 
 export default router

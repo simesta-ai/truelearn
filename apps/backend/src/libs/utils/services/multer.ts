@@ -19,7 +19,7 @@ const fileFilter = (req: any, file: Express.Multer.File, cb: multer.FileFilterCa
     "image/png" // png
   ];
 
-  if (file.size > 20 * 1024 * 1024) { 
+  if (file.size > 20 * 1024 * 1024) {
     req.fileValidationError = 'File too large. Maximum size allowed is 20 MB.';
     return cb(null, false);
   }
@@ -39,7 +39,7 @@ const audioFileFilter = (req: any, file: Express.Multer.File, cb: multer.FileFil
     "audio/mp4", // mp4
   ];
 
-  if (file.size > 20 * 1024 * 1024) { 
+  if (file.size > 20 * 1024 * 1024) {
     req.fileValidationError = 'File too large. Maximum size allowed is 20 MB.';
     return cb(null, false);
   }

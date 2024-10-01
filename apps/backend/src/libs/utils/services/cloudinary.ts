@@ -1,7 +1,5 @@
 import {
   ConfigOptions,
-  UploadApiErrorResponse,
-  UploadApiResponse,
   v2 as cloudinary,
 } from "cloudinary";
 import streamifier from "streamifier";

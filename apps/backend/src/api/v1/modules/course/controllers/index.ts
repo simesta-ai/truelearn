@@ -58,15 +58,15 @@ class CourseController {
     }
   }
 
-  getCourseById:RequestHandler = async (req, res, next) =>{
+  getCourseById: RequestHandler = async (req, res, next) => {
     try {
       const courseId = req.params.courseId
       const course = await courseService.getCourseById(courseId)
       res.status(200).json({
-          message: 'Successfully Gotten a Course',
-          success: true,
-          data: course,
-        })
+        message: 'Successfully Gotten a Course',
+        success: true,
+        data: course,
+      })
     } catch (error) {
       next(error)
     }

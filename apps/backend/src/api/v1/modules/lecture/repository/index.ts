@@ -38,7 +38,6 @@ class LectureRepository {
     return lectures
   }
 
-
   updateVideoAndContent = async (
     id: string,
     videos: { id: string }[],
@@ -51,9 +50,9 @@ class LectureRepository {
           where: { id: video.id },
           update: { lectureId: id }, // Update if the video already exists
           create: { id: video.id, lectureId: id }, // Create if the video doesn't exist
-        });
+        })
       })
-    );
+    )
 
     // Step 2: Update the main entity with basic fields and connect the videos (ensure the videos exist first)
     const update = await this.model.update({
@@ -64,7 +63,7 @@ class LectureRepository {
           connect: videos.map((video) => ({ id: video.id })),
         },
       },
-    });
+    })
 
     // Step 3: Use individual create operations for ideaContents and their nested quizzes
     await Promise.all(
@@ -73,16 +72,16 @@ class LectureRepository {
           data: {
             text: content.text,
             image: content.imageDescription,
-            lectureId: id, 
+            lectureId: id,
           },
-        });
+        })
 
         if (content.quiz) {
           await prisma.quiz.create({
             data: {
               question: content.quiz?.question ?? '',
               explanation: content.quiz.explanation,
-              ideaContentId: createdContent.id, 
+              ideaContentId: createdContent.id,
               options: {
                 create: (content.quiz.options ?? []).map((option) => ({
                   text: option,
@@ -92,13 +91,13 @@ class LectureRepository {
                 create: [{ text: content.quiz?.correct_answer ?? '' }],
               },
             },
-          });
+          })
         }
       })
-    );
+    )
 
-    return update;
-  };
+    return update
+  }
 
   getIdeaContents = async (lectureId: string) => {
     const lecture = await this.model.findUnique({
@@ -106,7 +105,7 @@ class LectureRepository {
       include: {
         ideaContents: {
           include: {
-            quizzes: {
+            quiz: {
               include: {
                 options: true,
                 answers: true,
@@ -116,13 +115,10 @@ class LectureRepository {
         },
         videos: true,
       },
-    });
+    })
 
-    return lecture;
-  };
-
-
-
+    return lecture
+  }
 
   updateOne = async ({
     id,
