@@ -60,7 +60,7 @@ async function fromFile(path: string) {
 }
 
 async function handleTextToSpeech(message: string) {
-  const audioPath = `./public/uploads/${Date.now()}.mp3`
+  const audioPath = `./public/uploads/${Date.now()}.wav`
   const audioConfig = sdk.AudioConfig.fromAudioFileOutput(audioPath)
 
   speechConfig.speechSynthesisVoiceName = 'en-US-AvaMultilingualNeural'

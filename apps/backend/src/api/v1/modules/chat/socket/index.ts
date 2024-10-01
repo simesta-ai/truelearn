@@ -21,7 +21,12 @@ class SocketController {
     this.socket = socket
   }
   public async initializeMessaging() {
-    io.emit('simesta message', await aiMessenger.startLearningStylePrediction())
+    this.socket.on('start prediction', async (msg: string) => {
+      io.emit('simesta message', await aiMessenger.startLearningStylePrediction())
+    })
+    this.socket.on('user lecture chat', async (msg: string) => {
+      io.emit('simesta message', await aiMessenger.chat(msg))
+    })
     this.socket.on('chat message', async (msg: string) => {
       io.emit('simesta message', await aiMessenger.chat(msg))
     })
