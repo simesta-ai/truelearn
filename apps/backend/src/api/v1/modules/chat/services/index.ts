@@ -6,6 +6,7 @@
 
 import fs from 'fs'
 const sdk = require('microsoft-cognitiveservices-speech-sdk')
+import AIGenerator from '../../../../../libs/utils/services/aigenerator'
 import convertFileFormat from '../../../../../libs/utils/services/audioconverter'
 import dotenv from 'dotenv'
 
@@ -16,6 +17,8 @@ const speechConfig = sdk.SpeechConfig.fromSubscription(
   process.env.SPEECH_REGION
 )
 speechConfig.speechRecognitionLanguage = 'en-US'
+
+const aiGenerator = new AIGenerator()
 
 async function fromFile(path: string) {
   convertFileFormat(path, './public/uploads/text.wav')
@@ -103,6 +106,18 @@ class ChatService {
       const audioPath = await handleTextToSpeech(text)
       if (typeof audioPath === 'string') {
         return audioPath
+      } else {
+        return ''
+      }
+    } catch (error) {
+      throw error
+    }
+  }
+  async textToImage(text: string) {
+    try {
+      const imageUrl = await aiGenerator.generateImageFromText(text)
+      if (typeof imageUrl === 'string') {
+        return imageUrl
       } else {
         return ''
       }

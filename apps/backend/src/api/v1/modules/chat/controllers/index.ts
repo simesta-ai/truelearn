@@ -62,6 +62,28 @@ class ChatController {
       next(error)
     }
   }
+  async textToImage(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { text } = req.body
+      if (!text) {
+        throw new ValidateError('Invalid value')
+      }
+      const response = await chatService.textToImage(text)
+      if (response && response.length > 0) {
+        res.status(200).json({
+          message: 'Text to Image conversion successful',
+          data: response,
+        })
+      } else {
+        res.status(400).json({
+          message: 'Text to Image conversion failed',
+          data: null,
+        })
+      }
+    } catch (error) {
+     next(error) 
+    }
+  }
 }
 
 export default ChatController

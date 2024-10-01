@@ -25,5 +25,9 @@ router.post(
   '/text-to-speech',
   chatController.textToSpeech
 )
+router.post(
+  '/text-to-image',
+  chatController.textToImage
+)
 
 export default router

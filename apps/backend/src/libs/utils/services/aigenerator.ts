@@ -64,6 +64,36 @@ class AIGenerator {
     }
   }
 
+  generateImageFromText = async (text: string) => {
+    try {
+      const prompt = `${text}`
+      const imageResponse = await new Promise((resolve, reject) => {
+        this.clarifaiModel.PostModelOutputs(
+          this.clarifaiImageModelConfig(prompt),
+          this.clarifaiMetadata,
+          async (err: any, response: any) => {
+            if (err) {
+              reject(err)
+            }
+            if (response.status.code !== 10000) {
+              reject(err)
+            }
+            const imageBuffer = response.outputs[0].data.image.base64
+            const secureImageUrl =
+              await this.cloudinaryService.uploadImageBufferToCloud(imageBuffer)
+            resolve(secureImageUrl)
+          }
+        )
+      })
+      if (typeof imageResponse === 'string') {
+        return imageResponse
+      }
+      return ''
+    } catch (error: Error | any) {
+      throw new ServerError(error.message ?? 'An internal server error occured')
+    }
+  }
+
   private clarifaiImageModelConfig(prompt: string) {
     return {
       user_app_id: {
@@ -203,7 +233,7 @@ class AIGenerator {
       )}`
     }
     const rawIdeaContent = await this.generateText(prompt)
-    if(!rawIdeaContent) {
+    if (!rawIdeaContent) {
       return []
     }
     const cleanedContent = rawIdeaContent
