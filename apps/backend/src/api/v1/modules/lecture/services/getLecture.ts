@@ -14,8 +14,8 @@ const getLecture = async (lectureId: string) => {
     videos: string[]
     ideaContent: { text: string }[]
   } = {
-    videos: [''],
     ideaContent: [],
+    videos: [''],
   }
   try {
     const lecture = await lectureRepository.getIdeaContents(lectureId)
@@ -28,12 +28,14 @@ const getLecture = async (lectureId: string) => {
       }
 
       if (lecture.videos && lecture.videos.length > 0) {
-        lectureContent.videos = lecture.videos.map((video: {
-          id: string;
-          lectureId: string;
-          createdAt: Date;
-          updatedAt: Date;
-        }) => video.id)
+        lectureContent.videos = lecture.videos.map(
+          (video: {
+            id: string
+            lectureId: string
+            createdAt: Date
+            updatedAt: Date
+          }) => video.id
+        )
       } else {
         error = new ServerError('Lecture videos do not exist')
       }

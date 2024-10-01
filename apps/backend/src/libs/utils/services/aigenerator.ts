@@ -170,6 +170,7 @@ class AIGenerator {
     therei no need to add json or any character to the response, just the JSON object
 
     Generate as much ideas as possible for the lecture ${lectureTitle} to give a comprehensive understanding of the topic.
+    
 
  starting here-> {
     "ideaContent": [
