@@ -1,10 +1,10 @@
 # TrueLearn - AI-powered Learning Assistant
 
-TrueLearn is an innovative learning application that harnesses the power of AI to create personalized learning experiences for users. It interacts with the user and determines the way they learn best and teaches them "ANY" course of their choice based on that learning method.
+TrueLearn, the powerhouse of Simesta AI is part an innovative learning assistant application that harnesses the power of AI to create personalized learning experiences for users. It interacts with the user and determines the way they learn best and teaches them "ANY" course of their choice based on that learning method.
 
 The backend server is live at [https://truelearn-production.up.railway.app](https://truelearn-production.up.railway.app)
 
-## Project Overview(API)
+## Project Overview(Truelearn API)
 
 This repository contains the backend code for the TrueLearn application, built with Express and TypeScript. It serves as the core engine for the entire TrueLearn platform.
 
