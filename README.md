@@ -2,6 +2,10 @@
 
 TrueLearn, the powerhouse of Simesta AI is part an innovative learning assistant application that harnesses the power of AI to create personalized learning experiences for users. It interacts with the user and determines the way they learn best and teaches them "ANY" course of their choice based on that learning method.
 
+Presentation Slide: https://drive.google.com/file/d/1gamxJNKA5Jsjba6GpgWVW2zHp3YIMnpY/view?usp=sharing
+
+Application Demo: https://youtu.be/SCLDU8HcGEk
+
 The backend server is live at [https://truelearn-production.up.railway.app](https://truelearn-production.up.railway.app)
 
 ## Project Overview(Truelearn API)

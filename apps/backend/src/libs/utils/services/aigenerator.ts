@@ -52,6 +52,7 @@ class AIGenerator {
             }
 
             const output = response.outputs[0]
+            console.log(output)
             const text = output.data.text.raw
             resolve(text)
           }
